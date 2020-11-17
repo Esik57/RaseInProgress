@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class StartFinish : MonoBehaviour
+public class Сountdown : MonoBehaviour
 {
     private float pauseTime;
     void Start()
