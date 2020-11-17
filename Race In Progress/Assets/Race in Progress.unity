@@ -523,7 +523,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   controller: {fileID: 192055979}
   speed: 20
-  angle: 0.3
+  angle: 0.2
   body: {fileID: 192055981}
   bomb: {fileID: 1950459735}
   delay: 3
