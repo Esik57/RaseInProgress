@@ -12,8 +12,9 @@ public class PlayerController2 : MonoBehaviour
     private float z;
     private float rotX = 0.0f;
 
+    public GameObject newBomb;
     private bool isActive;
-    public GameObject bomb;
+    //public GameObject bomb;
     public float delay = 3f;
     public Transform dropSpot;
     private bool dropped = false;
@@ -59,8 +60,12 @@ public class PlayerController2 : MonoBehaviour
 
             if(Input.GetKey(KeyCode.DownArrow) && !dropped)
             {
-                bomb.SetActive(true);
-                bomb.transform.position = dropSpot.position;
+                //bomb.SetActive(true);
+                //bomb.transform.position = dropSpot.position;
+
+                Rigidbody clone;
+                clone = (Instantiate(newBomb, dropSpot.position, dropSpot.rotation)).GetComponent<Rigidbody>();
+
                 dropped = true;
                 StartCoroutine("BombDropped");
             }
