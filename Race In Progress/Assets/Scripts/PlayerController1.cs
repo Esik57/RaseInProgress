@@ -4,79 +4,155 @@ using UnityEngine;
 
 public class PlayerController1 : MonoBehaviour
 {
-    public CharacterController controller;
-    public float speed = 12f;
-    public float angle = 2f;
+    //public CharacterController controller;
+    //public float speed = 12f;
+    //public float angle = 2f;
+    //public Transform body;
+    //private float x;
+    //private float z;
+    //private float rotX = 0.0f;
+
+    //public GameObject newBomb;
+    //private bool isActive;
+    ////public GameObject bomb;
+    //public float delay = 3f;
+    //public Transform dropSpot;
+    //private bool dropped = false;
+    //public float BombDelay = 5;
+
+    //public float gravity = -10f;
+    //Vector3 velocity;
+    //public Transform groundCheck;
+    //public float groundDistance = 0.3f;
+    //public LayerMask groundMask;
+    //private bool isGrounded;
+
+    //void Start()
+    //{
+    //    isActive = true;
+    //    Vector3 rotation = transform.localRotation.eulerAngles;
+    //    rotX = rotation.x;
+    //    Cursor.lockState = CursorLockMode.Locked;
+    //    Cursor.visible = false;
+    //}
+    //void Update()
+    //{
+    //    if (isActive)
+    //    {
+    //        isGrounded = Physics.CheckSphere(groundCheck.position, groundDistance, groundMask);
+    //        if (isGrounded && velocity.y < 0)
+    //        {
+    //            velocity.y = -2f;
+    //        }
+
+    //        if (Input.GetKey(KeyCode.W))
+    //        {
+    //            controller.Move(body.forward * speed * Time.deltaTime);
+    //        }
+    //        if (Input.GetKey(KeyCode.A))
+    //        {
+    //            rotX -= angle;
+    //            body.rotation = Quaternion.Euler(0, rotX, 0);
+    //        }
+    //        if (Input.GetKey(KeyCode.D))
+    //        {
+    //            rotX += angle;
+    //            body.rotation = Quaternion.Euler(0, rotX, 0);
+    //        }
+
+    //        if (Input.GetKey(KeyCode.S) && !dropped)
+    //        {
+    //            //bomb.SetActive(true);
+    //            //bomb.transform.position = dropSpot.position;
+
+    //            Rigidbody clone;
+    //            clone = (Instantiate(newBomb, dropSpot.position, dropSpot.rotation)).GetComponent<Rigidbody>();
+
+    //            dropped = true;
+    //            StartCoroutine("BombDropped");
+    //        }
+
+    //        velocity.y += gravity * Time.deltaTime;
+    //        controller.Move(velocity * 8f * Time.deltaTime);
+    //    }
+    //}
+    //void OnTriggerEnter(Collider collider)
+    //{
+    //    if (collider.CompareTag("Bomb"))
+    //    {
+    //        isActive = false;
+    //        StartCoroutine("Waiting");
+    //    }
+    //}
+
+    //IEnumerator BombDropped()
+    //{
+    //    yield return new WaitForSeconds(BombDelay);
+    //    dropped = false;
+    //}
+    //IEnumerator Waiting()
+    //{
+    //    yield return new WaitForSeconds(delay);
+    //    isActive = true;
+    //}
+    private Rigidbody rb;
     public Transform body;
-    private float x;
-    private float z;
+    public float speed = 100f;
+    public float angle = 5f;
     private float rotX = 0.0f;
 
     public GameObject newBomb;
     private bool isActive;
-    //public GameObject bomb;
     public float delay = 3f;
     public Transform dropSpot;
     private bool dropped = false;
     public float BombDelay = 5;
 
     public float gravity = -10f;
-    Vector3 velocity;
     public Transform groundCheck;
     public float groundDistance = 0.3f;
     public LayerMask groundMask;
-    private bool isGrounded;
 
-    void Start()
+    private void Start()
     {
         isActive = true;
-        Vector3 rotation = transform.localRotation.eulerAngles;
-        rotX = rotation.x;
         Cursor.lockState = CursorLockMode.Locked;
         Cursor.visible = false;
+        Vector3 rotation = transform.localRotation.eulerAngles;
+        rotX = rotation.x;
+        rb = GetComponent<Rigidbody>();
     }
-    void Update()
+
+    private void Update()
     {
         if (isActive)
         {
-            isGrounded = Physics.CheckSphere(groundCheck.position, groundDistance, groundMask);
-            if (isGrounded && velocity.y < 0)
-            {
-                velocity.y = -2f;
-            }
-
             if (Input.GetKey(KeyCode.W))
             {
-                controller.Move(body.forward * speed * Time.deltaTime);
+                rb.velocity = body.forward * speed * Time.deltaTime;
             }
             if (Input.GetKey(KeyCode.A))
             {
                 rotX -= angle;
-                body.rotation = Quaternion.Euler(0, rotX, 0);
+                rb.rotation = Quaternion.Euler(0, rotX, 0);
             }
             if (Input.GetKey(KeyCode.D))
             {
                 rotX += angle;
-                body.rotation = Quaternion.Euler(0, rotX, 0);
+                rb.rotation = Quaternion.Euler(0, rotX, 0);
             }
-
-            if (Input.GetKey(KeyCode.S) && !dropped)
+            if (Input.GetKey(KeyCode.S) && !dropped) // Проверка и сброс бомбы
             {
-                //bomb.SetActive(true);
-                //bomb.transform.position = dropSpot.position;
-
                 Rigidbody clone;
                 clone = (Instantiate(newBomb, dropSpot.position, dropSpot.rotation)).GetComponent<Rigidbody>();
-                
+
                 dropped = true;
                 StartCoroutine("BombDropped");
             }
-
-            velocity.y += gravity * Time.deltaTime;
-            controller.Move(velocity * 8f * Time.deltaTime);
         }
+
     }
-    void OnTriggerEnter(Collider collider)
+    void OnTriggerEnter(Collider collider) // Столкновение с бомбой
     {
         if (collider.CompareTag("Bomb"))
         {
@@ -85,12 +161,12 @@ public class PlayerController1 : MonoBehaviour
         }
     }
 
-    IEnumerator BombDropped()
+    IEnumerator BombDropped() // Задержка перед броском следующей бомбы
     {
         yield return new WaitForSeconds(BombDelay);
         dropped = false;
     }
-    IEnumerator Waiting()
+    IEnumerator Waiting() // Ожидание при поломке машины
     {
         yield return new WaitForSeconds(delay);
         isActive = true;
