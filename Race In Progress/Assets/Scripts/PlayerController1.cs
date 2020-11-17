@@ -16,6 +16,8 @@ public class PlayerController1 : MonoBehaviour
     public GameObject bomb;
     public float delay = 3f;
     public Transform dropSpot;
+    private bool dropped = false;
+    public float BombDelay = 5;
 
     public float gravity = -10f;
     Vector3 velocity;
@@ -57,10 +59,12 @@ public class PlayerController1 : MonoBehaviour
                 body.rotation = Quaternion.Euler(0, rotX, 0);
             }
 
-            if (Input.GetKey(KeyCode.S))
+            if (Input.GetKey(KeyCode.S) && !dropped)
             {
                 bomb.SetActive(true);
                 bomb.transform.position = dropSpot.position;
+                dropped = true;
+                StartCoroutine("BombDropped");
             }
 
             velocity.y += gravity * Time.deltaTime;
@@ -76,6 +80,11 @@ public class PlayerController1 : MonoBehaviour
         }
     }
 
+    IEnumerator BombDropped()
+    {
+        yield return new WaitForSeconds(BombDelay);
+        dropped = false;
+    }
     IEnumerator Waiting()
     {
         yield return new WaitForSeconds(delay);
