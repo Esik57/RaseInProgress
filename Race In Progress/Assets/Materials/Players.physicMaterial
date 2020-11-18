@@ -7,15 +7,8 @@ PhysicMaterial:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: Players
-<<<<<<< Updated upstream
   dynamicFriction: 0.1
   staticFriction: 0.5
   bounciness: 0.3
   frictionCombine: 2
-=======
-  dynamicFriction: 1
-  staticFriction: 1
-  bounciness: 0.2
-  frictionCombine: 1
->>>>>>> Stashed changes
   bounceCombine: 0

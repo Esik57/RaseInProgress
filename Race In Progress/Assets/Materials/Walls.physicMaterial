@@ -9,10 +9,6 @@ PhysicMaterial:
   m_Name: Walls
   dynamicFriction: 0
   staticFriction: 0
-<<<<<<< Updated upstream
   bounciness: 0.5
-=======
-  bounciness: 0.7
->>>>>>> Stashed changes
   frictionCombine: 1
   bounceCombine: 0
