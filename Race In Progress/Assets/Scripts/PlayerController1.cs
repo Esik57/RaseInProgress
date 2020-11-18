@@ -139,13 +139,14 @@ public class PlayerController1 : MonoBehaviour
             if (Input.GetKey(KeyCode.A))
             {
                 rotX -= angle;
-                rb.rotation = Quaternion.Euler(0, rotX, 0);            }
+                rb.rotation = Quaternion.Euler(0, rotX, 0);
+            }
             if (Input.GetKey(KeyCode.D))
             {
                 rotX += angle;
                 rb.rotation = Quaternion.Euler(0, rotX, 0);
             }
-            if (Input.GetKey(KeyCode.S) && !dropped && bombCounter<bombLimit) // Проверка и сброс бомбы
+            if (Input.GetKey(KeyCode.S) && !dropped && bombCounter < bombLimit) // Проверка и сброс бомбы
             {
                 Rigidbody clone;
                 clone = (Instantiate(newBomb, dropSpot.position, dropSpot.rotation)).GetComponent<Rigidbody>();
@@ -154,8 +155,8 @@ public class PlayerController1 : MonoBehaviour
                 StartCoroutine("BombDropped");
                 bombCounter++;
             }
-        }
 
+        }
     }
     void OnTriggerEnter(Collider collider) // Столкновение с бомбой
     {
