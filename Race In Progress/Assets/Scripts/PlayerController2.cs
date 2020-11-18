@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class PlayerController2 : MonoBehaviour
 {
+    #region Старый код 
     //public CharacterController controller;
     //public float speed = 12f;
     //public float angle = 2f;
@@ -94,6 +95,8 @@ public class PlayerController2 : MonoBehaviour
     //    yield return new WaitForSeconds(delay);
     //    isActive = true;
     //}
+    #endregion
+
     private Rigidbody rb;
     public Transform body;
     public float speed = 100f;
@@ -106,11 +109,8 @@ public class PlayerController2 : MonoBehaviour
     public Transform dropSpot;
     private bool dropped = false;
     public float BombDelay = 5;
-
-    public float gravity = -10f;
-    public Transform groundCheck;
-    public float groundDistance = 0.3f;
-    public LayerMask groundMask;
+    public int bombLimit;
+    private int bombCounter = 0;
 
     private void Start()
     {
@@ -124,6 +124,7 @@ public class PlayerController2 : MonoBehaviour
     {
         if (isActive)
         {
+            // Основное управление
             if (Input.GetKey(KeyCode.UpArrow))
             {
                 rb.velocity = body.forward * speed * Time.deltaTime;
@@ -138,13 +139,14 @@ public class PlayerController2 : MonoBehaviour
                 rotX += angle;
                 rb.rotation = Quaternion.Euler(0, rotX, 0);
             }
-            if (Input.GetKey(KeyCode.DownArrow) && !dropped) // Проверка и сброс бомбы
+            if (Input.GetKey(KeyCode.DownArrow) && !dropped && bombCounter < bombLimit) // Проверка и сброс бомбы
             {
                 Rigidbody clone;
                 clone = (Instantiate(newBomb, dropSpot.position, dropSpot.rotation)).GetComponent<Rigidbody>();
 
                 dropped = true;
                 StartCoroutine("BombDropped");
+                bombCounter++;
             }
         }
 

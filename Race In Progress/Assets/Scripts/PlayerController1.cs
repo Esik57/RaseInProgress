@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class PlayerController1 : MonoBehaviour
 {
+    #region Старый код
     //public CharacterController controller;
     //public float speed = 12f;
     //public float angle = 2f;
@@ -95,6 +96,8 @@ public class PlayerController1 : MonoBehaviour
     //    yield return new WaitForSeconds(delay);
     //    isActive = true;
     //}
+    #endregion
+
     private Rigidbody rb;
     public Transform body;
     public float speed = 100f;
@@ -107,11 +110,8 @@ public class PlayerController1 : MonoBehaviour
     public Transform dropSpot;
     private bool dropped = false;
     public float BombDelay = 5;
-
-    public float gravity = -10f;
-    public Transform groundCheck;
-    public float groundDistance = 0.3f;
-    public LayerMask groundMask;
+    public int bombLimit;
+    private int bombCounter = 0;
 
     private void Start()
     {
@@ -127,6 +127,7 @@ public class PlayerController1 : MonoBehaviour
     {
         if (isActive)
         {
+            // Основное управление
             if (Input.GetKey(KeyCode.W))
             {
                 rb.velocity = body.forward * speed * Time.deltaTime;
@@ -134,20 +135,20 @@ public class PlayerController1 : MonoBehaviour
             if (Input.GetKey(KeyCode.A))
             {
                 rotX -= angle;
-                rb.rotation = Quaternion.Euler(0, rotX, 0);
-            }
+                rb.rotation = Quaternion.Euler(0, rotX, 0);            }
             if (Input.GetKey(KeyCode.D))
             {
                 rotX += angle;
                 rb.rotation = Quaternion.Euler(0, rotX, 0);
             }
-            if (Input.GetKey(KeyCode.S) && !dropped) // Проверка и сброс бомбы
+            if (Input.GetKey(KeyCode.S) && !dropped && bombCounter<bombLimit) // Проверка и сброс бомбы
             {
                 Rigidbody clone;
                 clone = (Instantiate(newBomb, dropSpot.position, dropSpot.rotation)).GetComponent<Rigidbody>();
 
                 dropped = true;
                 StartCoroutine("BombDropped");
+                bombCounter++;
             }
         }
 
