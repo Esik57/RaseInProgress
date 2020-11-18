@@ -111,17 +111,20 @@ public class PlayerController2 : MonoBehaviour
     public float BombDelay = 5;
     public int bombLimit;
     private int bombCounter = 0;
+    private Vector3 rotation;
 
     private void Start()
     {
         isActive = true;
-        Vector3 rotation = transform.localRotation.eulerAngles;
+        rotation = transform.localRotation.eulerAngles;
         rotX = rotation.y;
         rb = GetComponent<Rigidbody>();
     }
 
     private void Update()
     {
+        rotation = transform.localRotation.eulerAngles;
+        rotX = rotation.y;
         // Основное управление
         if (isActive) 
         {
