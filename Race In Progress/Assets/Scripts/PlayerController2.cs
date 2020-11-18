@@ -116,15 +116,15 @@ public class PlayerController2 : MonoBehaviour
     {
         isActive = true;
         Vector3 rotation = transform.localRotation.eulerAngles;
-        rotX = rotation.x;
+        rotX = rotation.y;
         rb = GetComponent<Rigidbody>();
     }
 
     private void Update()
     {
-        if (isActive)
+        // Основное управление
+        if (isActive) 
         {
-            // Основное управление
             if (Input.GetKey(KeyCode.UpArrow))
             {
                 rb.velocity = body.forward * speed * Time.deltaTime;

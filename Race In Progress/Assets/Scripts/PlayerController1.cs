@@ -119,15 +119,15 @@ public class PlayerController1 : MonoBehaviour
         Cursor.lockState = CursorLockMode.Locked;
         Cursor.visible = false;
         Vector3 rotation = transform.localRotation.eulerAngles;
-        rotX = rotation.x;
+        rotX = rotation.y;
         rb = GetComponent<Rigidbody>();
     }
 
     private void Update()
     {
+        // Основное управление
         if (isActive)
         {
-            // Основное управление
             if (Input.GetKey(KeyCode.W))
             {
                 rb.velocity = body.forward * speed * Time.deltaTime;
