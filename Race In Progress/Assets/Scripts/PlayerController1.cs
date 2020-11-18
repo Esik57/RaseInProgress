@@ -112,19 +112,23 @@ public class PlayerController1 : MonoBehaviour
     public float BombDelay = 5;
     public int bombLimit;
     private int bombCounter = 0;
+    private Vector3 rotation;
 
     private void Start()
     {
         isActive = true;
         Cursor.lockState = CursorLockMode.Locked;
         Cursor.visible = false;
-        Vector3 rotation = transform.localRotation.eulerAngles;
-        rotX = rotation.y;
+        //rotation = transform.localRotation.eulerAngles;
+        //rotX = rotation.y;
         rb = GetComponent<Rigidbody>();
     }
 
     private void Update()
     {
+        rotation = transform.localRotation.eulerAngles;
+        rotX = rotation.y;
+
         // Основное управление
         if (isActive)
         {
