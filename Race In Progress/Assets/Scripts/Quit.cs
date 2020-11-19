@@ -8,19 +8,14 @@ public class Quit : MonoBehaviour
     //public GameObject PlayerOne;
     //public GameObject Playertwo;
 
-    // Start is called before the first frame update
     void Start()
     {
         Cursor.lockState = CursorLockMode.Locked;
         Cursor.visible = false;
     }
 
-    // Update is called once per frame
     void Update()
     {
-        // Включение нормального хода времени
-        Time.timeScale = 1;
-
         if (Input.GetKeyDown(KeyCode.Escape))
         {
             Exit.SetActive(true);
@@ -34,10 +29,17 @@ public class Quit : MonoBehaviour
             Cursor.visible = true;
         }
     }
+    private void OnEnable()
+    {
+        Cursor.lockState = CursorLockMode.Locked;
+        Cursor.visible = false;
+        Time.timeScale = 1;
+    }
 
     // Остановка времени
     IEnumerator pause()
     {
+        // Включение нормального хода времени
         Time.timeScale = 0;
         gameObject.SetActive(false);
         yield return 0;
