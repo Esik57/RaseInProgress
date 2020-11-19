@@ -116,9 +116,7 @@ public class PlayerController1 : MonoBehaviour
 
     private void Start()
     {
-        isActive = true;
-        Cursor.lockState = CursorLockMode.Locked;
-        Cursor.visible = false;
+        isActive = true;        
         //rotation = transform.localRotation.eulerAngles;
         //rotX = rotation.y;
         rb = GetComponent<Rigidbody>();
