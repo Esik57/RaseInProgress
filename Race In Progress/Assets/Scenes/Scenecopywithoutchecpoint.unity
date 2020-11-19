@@ -421,6 +421,30 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 1
         m_CallState: 2
+      - m_Target: {fileID: 1128897012}
+        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+        m_MethodName: SetActive
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 0}
+        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+        m_MethodName: 
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: 
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &381599628
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -940,6 +964,7 @@ MonoBehaviour:
   point6: {fileID: 497155807}
   point7: {fileID: 497155806}
   point8: {fileID: 497155805}
+  win: {fileID: 1835730061}
 --- !u!1 &786115084
 GameObject:
   m_ObjectHideFlags: 0
@@ -1000,7 +1025,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &823763823
 RectTransform:
   m_ObjectHideFlags: 0
@@ -1469,6 +1494,12 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 90, y: 0, z: 0}
+--- !u!1 &1128897012 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8660529409297560706, guid: 0979ed6350f9dec41b05c6b3efda604b,
+    type: 3}
+  m_PrefabInstance: {fileID: 1358079162}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &1301226125 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 9e4200b607bf7494e8c88d2a8bffb184,
@@ -1829,6 +1860,7 @@ MonoBehaviour:
   point2: {fileID: 1926086137}
   point3: {fileID: 1926086136}
   point4: {fileID: 1926086135}
+  win: {fileID: 1835730061}
 --- !u!136 &1810727949
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -1967,7 +1999,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1835730062
 RectTransform:
   m_ObjectHideFlags: 0
