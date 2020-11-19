@@ -1,0 +1,76 @@
+//создании линии старта в гонках unity 
+
+using UnityEngine;
+using TMPro;
+using System;
+using System.Collections;
+using System.Collections.Generic;
+
+public class Score: MonoBehaviour {
+
+   public int Score;
+   static int score = 0;
+
+    public static void setScore(int value)
+    {
+        score += value;
+    }
+
+    public static int getScore()
+    {
+        return score;
+    }
+
+    void OnGUI ()
+    {
+        GUILayout.Label("Score: " + score.ToString());
+    }
+}
+ 
+}
+
+ public GameObject Player;
+
+
+void Start(){
+Player = GameObject.Find("Player");
+public int score = 0;
+}
+
+ public void Update()
+{
+    // обновление текста очков только при их изменении
+    if (_lastPonts == points) return;
+    _lastPonts = points;
+    // очки в формате двух цифр, начинающихся с нулей
+    _pointsString = "Score: " + points.ToString("00");
+	GUI.color = Color.white;
+    GUI.Label(new Rect(1, 2, 3, 4, 5, 6, 7, 8, 9, 10), _pointsString ?? "");
+}
+ 
+  private TextMeshProUGUI text;
+    private Controls controls;
+ 
+ void OnCollisionEnter(Collision variable){
+if(variable.gameObject == Player){
+Player.GetComponent<Score>().Score += 1;
+Instantiate(gameObject);
+ 
+    public GameObject player;
+ 
+    void Start()
+    {
+        text = GetComponent<TextMeshProUGUI>();
+        controls = player.GetComponent<Controls>();
+    }
+ public float scores = 0f; //Очки
+    
+	if(other.tag == "startline1") //Если пересечение
+    {
+        if(control != null) //Если столкнулась машина игрока
+        {
+            control.scores += 1f; //Добавить 1 очко
+            
+     
+        }
+}
