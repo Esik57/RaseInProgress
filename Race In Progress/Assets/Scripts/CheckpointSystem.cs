@@ -12,6 +12,8 @@ public class CheckpointSystem : MonoBehaviour
     private GameObject point3;
     [SerializeField]
     private GameObject point4;
+    [SerializeField]
+    private GameObject point9;
     public int counter = 0;
     public GameObject win;
 
@@ -42,13 +44,13 @@ public class CheckpointSystem : MonoBehaviour
         {
             point1.SetActive(true);
             point4.SetActive(false);
-            //counter++;
-            //Debug.Log($"Rounds red = {counter}");
-            //if (counter > 1)
-            //{
-            //    win.SetActive(true);
-            //}
         }
+        if (checkpoint.CompareTag("9"))
+        {
+            point1.SetActive(false);
+        }
+            
+        
     }
 
 
