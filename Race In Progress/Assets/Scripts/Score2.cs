@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class Score : MonoBehaviour
+public class Score2 : MonoBehaviour
 {
     public int counter = 0;
     public GameObject win;
@@ -11,16 +11,18 @@ public class Score : MonoBehaviour
 
     private void OnTriggerEnter(Collider checkpoint)
     {
-        if (checkpoint.CompareTag("4"))
+        if (checkpoint.CompareTag("8"))
         {
             counter++;
-            score.text = counter.ToString();
-            Debug.Log($"Rounds red = {counter}");
+            Debug.Log($"Rounds blue = {counter}");
             if (counter > 1)
             {
-                score.text = counter.ToString();
                 win.SetActive(true);
             }
         }
+    }
+    public void Update()
+    {
+        score.text = $"SCORE:{ counter}";
     }
 }
