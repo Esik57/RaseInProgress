@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Quit : MonoBehaviour
 {
-    public GameObject Exit;
+    public GameObject Esc;
     //public GameObject PlayerOne;
     //public GameObject Playertwo;
 
@@ -18,7 +18,7 @@ public class Quit : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.Escape))
         {
-            Exit.SetActive(true);
+            Esc.SetActive(true);
             //PlayerOne.SetActive(false);
             //Playertwo.SetActive(false);
 
