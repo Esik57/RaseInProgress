@@ -12,7 +12,7 @@ public class CheckpointSystem : MonoBehaviour
     private GameObject point3;
     [SerializeField]
     private GameObject point4;
-    private int counter = 0;
+    public float counter = 0;
     public GameObject win;
 
     void Start()
