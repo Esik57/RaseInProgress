@@ -10,7 +10,6 @@ public class Bomb : MonoBehaviour
     {
         if (Object.CompareTag("Player"))
         {
-            //bomb.SetActive(false);
             Destroy(bomb);
         }
     }

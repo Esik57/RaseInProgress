@@ -116,8 +116,6 @@ public class PlayerController2 : MonoBehaviour
     private void Start()
     {
         isActive = true;
-        rotation = transform.localRotation.eulerAngles;
-        rotX = rotation.y;
         rb = GetComponent<Rigidbody>();
     }
 
@@ -125,6 +123,7 @@ public class PlayerController2 : MonoBehaviour
     {
         rotation = transform.localRotation.eulerAngles;
         rotX = rotation.y;
+
         // Основное управление
         if (isActive) 
         {
@@ -142,7 +141,7 @@ public class PlayerController2 : MonoBehaviour
                 rotX += angle;
                 rb.rotation = Quaternion.Euler(0, rotX, 0);
             }
-            if (Input.GetKey(KeyCode.DownArrow) && !dropped && bombCounter < bombLimit) // Проверка и сброс бомбы
+            if (Input.GetKey(KeyCode.DownArrow) && !dropped && bombCounter < bombLimit && Time.timeScale != 0) // Проверка и сброс бомбы
             {
                 Rigidbody clone;
                 clone = (Instantiate(newBomb, dropSpot.position, dropSpot.rotation)).GetComponent<Rigidbody>();
