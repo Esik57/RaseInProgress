@@ -17,5 +17,6 @@ public class Сountdown : MonoBehaviour
         while (Time.realtimeSinceStartup < pauseTime)
             yield return 0;
         Time.timeScale = 1;
+        gameObject.SetActive(false);
     }
 }
