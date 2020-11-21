@@ -15,9 +15,12 @@ public class Score1 : MonoBehaviour
         {
             counter++;
             Debug.Log($"Rounds red = {counter}");
-            if (counter > 1)
+            if (counter == 1)
             {
                 win.SetActive(true);
+                Cursor.lockState = CursorLockMode.None;
+                Cursor.visible = true;
+                Time.timeScale = 0;
             }
         }
     }

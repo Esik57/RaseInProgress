@@ -15,7 +15,7 @@ public class Score2 : MonoBehaviour
         {
             counter++;
             Debug.Log($"Rounds blue = {counter}");
-            if (counter > 1)
+            if (counter == 10)
             {
                 win.SetActive(true);
             }

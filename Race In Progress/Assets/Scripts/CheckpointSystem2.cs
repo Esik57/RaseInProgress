@@ -15,7 +15,7 @@ public class CheckpointSystem2 : MonoBehaviour
     [SerializeField]
     private GameObject point10;
     public int counter = 0;
-    public GameObject win;
+    
 
     void Start()
     {
