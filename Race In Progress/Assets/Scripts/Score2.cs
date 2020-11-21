@@ -23,6 +23,6 @@ public class Score2 : MonoBehaviour
     }
     public void Update()
     {
-        score.text = $"SCORE:{ counter}";
+        score.text = $"{ counter}";
     }
 }
