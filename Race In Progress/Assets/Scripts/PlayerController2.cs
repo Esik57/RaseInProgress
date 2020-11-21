@@ -1,7 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.UI;
 
 public class PlayerController2 : MonoBehaviour
 {
@@ -113,8 +112,6 @@ public class PlayerController2 : MonoBehaviour
     public int bombLimit;
     private int bombCounter = 0;
     private Vector3 rotation;
-    public GameObject activeBomb;
-    public Text bombText;
 
     private void Start()
     {
@@ -150,10 +147,8 @@ public class PlayerController2 : MonoBehaviour
                 clone = (Instantiate(newBomb, dropSpot.position, dropSpot.rotation)).GetComponent<Rigidbody>();
 
                 dropped = true;
-                activeBomb.SetActive(false);
                 StartCoroutine("BombDropped");
                 bombCounter++;
-                bombText.text = $"{bombLimit - bombCounter}";
             }
         }
 
@@ -171,8 +166,6 @@ public class PlayerController2 : MonoBehaviour
     {
         yield return new WaitForSeconds(BombDelay);
         dropped = false;
-        if (bombCounter !=5)
-            activeBomb.SetActive(true);
     }
     IEnumerator Waiting() // Ожидание при поломке машины
     {
