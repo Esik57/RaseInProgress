@@ -10,50 +10,35 @@ public class CheckpointSystem : MonoBehaviour
     private GameObject point2;
     [SerializeField]
     private GameObject point3;
-    [SerializeField]
-    private GameObject point4;
-    [SerializeField]
-    private GameObject point9;
     public int counter = 0;
     
 
     void Start()
     {
-        point1.SetActive(true);
+        point1.SetActive(true);  
+        //активирует первый чекпоинт
     }
 
     private void OnTriggerEnter(Collider checkpoint)
     {
         
-        if (checkpoint.CompareTag("1"))
+        if (checkpoint.CompareTag("1"))   //активация финиша
         {
             point2.SetActive(true);
             point1.SetActive(false);
-            point9.SetActive(false);
         }
-        if (checkpoint.CompareTag("2"))
+        if (checkpoint.CompareTag("2"))  //финиш
         {
-            point3.SetActive(true);
+            point1.SetActive(true);
             point2.SetActive(false);
-            point9.SetActive(true);
         }
-        if (checkpoint.CompareTag("3"))
-        {
-            point4.SetActive(true);
-            point3.SetActive(false);
-        }
-        if (checkpoint.CompareTag("4"))
+        if (checkpoint.CompareTag("3"))  //wrongway
         {
             point1.SetActive(true);
-            point4.SetActive(false);
+            point2.SetActive(false);
         }
-        if (checkpoint.CompareTag("9"))
-        {
-            point1.SetActive(true);
-            point4.SetActive(false);
-        }
-            
         
+
     }
 
 

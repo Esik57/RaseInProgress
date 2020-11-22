@@ -11,7 +11,7 @@ public class Score1 : MonoBehaviour
 
     private void OnTriggerEnter(Collider checkpoint)
     {
-        if (checkpoint.CompareTag("4"))
+        if (checkpoint.CompareTag("2"))
         {
             counter++;
             Debug.Log($"Rounds red = {counter}");

@@ -5,52 +5,37 @@ using UnityEngine;
 public class CheckpointSystem2 : MonoBehaviour
 {
     [SerializeField]
+    private GameObject point4;
+    [SerializeField]
     private GameObject point5;
     [SerializeField]
     private GameObject point6;
-    [SerializeField]
-    private GameObject point7;
-    [SerializeField]
-    private GameObject point8;
-    [SerializeField]
-    private GameObject point10;
+    
     public int counter = 0;
     
 
     void Start()
     {
-        point5.SetActive(true);
+        point4.SetActive(true);
     }
-    
+
     private void OnTriggerEnter(Collider checkpoint)
     {
 
-        if (checkpoint.CompareTag("5"))
+        if (checkpoint.CompareTag("4"))   //активация финиша
         {
-            point6.SetActive(true);
+            point5.SetActive(true);
+            point4.SetActive(false);
+        }
+        if (checkpoint.CompareTag("5"))  //финиш
+        {
+            point4.SetActive(true);
             point5.SetActive(false);
-            point10.SetActive(false);
         }
-        if (checkpoint.CompareTag("6"))
+        if (checkpoint.CompareTag("6"))  //wrongway
         {
-            point7.SetActive(true);
-            point6.SetActive(false);
-            point10.SetActive(true);
-        }
-        if (checkpoint.CompareTag("7"))
-        {
-            point8.SetActive(true);
-            point7.SetActive(false);
-        }
-        if (checkpoint.CompareTag("8"))
-        {
-            point5.SetActive(true);
-            point8.SetActive(false);           
-        }
-        if (checkpoint.CompareTag("10"))
-        {
-            point5.SetActive(true);
-            point8.SetActive(false);
+            point4.SetActive(true);
+            point5.SetActive(false);
         }
     }
 }
