@@ -103,7 +103,7 @@ TrailRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Time: 0.4
+  m_Time: 0.2
   m_Parameters:
     serializedVersion: 3
     widthMultiplier: 1
@@ -111,8 +111,8 @@ TrailRenderer:
       serializedVersion: 2
       m_Curve:
       - serializedVersion: 3
-        time: 0.54180783
-        value: 0.2541309
+        time: 0.51077145
+        value: 0.5101276
         inSlope: 0
         outSlope: 0
         tangentMode: 0
@@ -157,7 +157,7 @@ TrailRenderer:
     textureMode: 3
     shadowBias: 0.5
     generateLightingData: 0
-  m_MinVertexDistance: 0.1
+  m_MinVertexDistance: 0.01
   m_Autodestruct: 0
   m_Emitting: 1
 --- !u!1 &1342919584039756424
@@ -356,7 +356,7 @@ TrailRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Time: 0.4
+  m_Time: 0.2
   m_Parameters:
     serializedVersion: 3
     widthMultiplier: 1
@@ -364,8 +364,8 @@ TrailRenderer:
       serializedVersion: 2
       m_Curve:
       - serializedVersion: 3
-        time: 0.54180783
-        value: 0.2541309
+        time: 0.51077145
+        value: 0.5101276
         inSlope: 0
         outSlope: 0
         tangentMode: 0
@@ -410,7 +410,7 @@ TrailRenderer:
     textureMode: 3
     shadowBias: 0.5
     generateLightingData: 0
-  m_MinVertexDistance: 0.1
+  m_MinVertexDistance: 0.01
   m_Autodestruct: 0
   m_Emitting: 1
 --- !u!1 &4169997551288776689
@@ -457,7 +457,7 @@ Light:
   m_Shape: 0
   m_Color: {r: 0.011764707, g: 0.28235295, b: 1, a: 1}
   m_Intensity: 10
-  m_Range: 1
+  m_Range: 2
   m_SpotAngle: 106
   m_InnerSpotAngle: 2
   m_CookieSize: 10
@@ -490,7 +490,7 @@ Light:
   m_Cookie: {fileID: 0}
   m_DrawHalo: 0
   m_Flare: {fileID: 0}
-  m_RenderMode: 0
+  m_RenderMode: 1
   m_CullingMask:
     serializedVersion: 2
     m_Bits: 4294967295
@@ -549,7 +549,7 @@ Light:
   m_Shape: 0
   m_Color: {r: 0.011764707, g: 0.28235295, b: 1, a: 1}
   m_Intensity: 10
-  m_Range: 1
+  m_Range: 2
   m_SpotAngle: 106
   m_InnerSpotAngle: 2
   m_CookieSize: 10
@@ -582,7 +582,7 @@ Light:
   m_Cookie: {fileID: 0}
   m_DrawHalo: 0
   m_Flare: {fileID: 0}
-  m_RenderMode: 0
+  m_RenderMode: 1
   m_CullingMask:
     serializedVersion: 2
     m_Bits: 4294967295

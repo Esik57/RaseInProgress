@@ -29,11 +29,13 @@ public class CheckpointSystem : MonoBehaviour
         {
             point2.SetActive(true);
             point1.SetActive(false);
+            point9.SetActive(false);
         }
         if (checkpoint.CompareTag("2"))
         {
             point3.SetActive(true);
             point2.SetActive(false);
+            point9.SetActive(true);
         }
         if (checkpoint.CompareTag("3"))
         {
@@ -47,7 +49,8 @@ public class CheckpointSystem : MonoBehaviour
         }
         if (checkpoint.CompareTag("9"))
         {
-            point1.SetActive(false);
+            point1.SetActive(true);
+            point4.SetActive(false);
         }
             
         
