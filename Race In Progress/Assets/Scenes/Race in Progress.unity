@@ -319,7 +319,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!212 &158622173
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -6241,12 +6241,17 @@ PrefabInstance:
     - target: {fileID: 1602007775543934438, guid: eaabf364349719d43ae1dedc38aa74f4,
         type: 3}
       propertyPath: m_LocalScale.x
-      value: 1
+      value: 1.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 1602007775543934438, guid: eaabf364349719d43ae1dedc38aa74f4,
+        type: 3}
+      propertyPath: m_LocalScale.y
+      value: 1.5
       objectReference: {fileID: 0}
     - target: {fileID: 1602007775543934438, guid: eaabf364349719d43ae1dedc38aa74f4,
         type: 3}
       propertyPath: m_LocalScale.z
-      value: 1
+      value: 1.5
       objectReference: {fileID: 0}
     - target: {fileID: 1602007775543934438, guid: eaabf364349719d43ae1dedc38aa74f4,
         type: 3}
@@ -7580,12 +7585,17 @@ PrefabInstance:
     - target: {fileID: 8074888198419964844, guid: 88c32354f0c48404f97b5d1ba0817afd,
         type: 3}
       propertyPath: m_LocalScale.x
-      value: 1
+      value: 1.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 8074888198419964844, guid: 88c32354f0c48404f97b5d1ba0817afd,
+        type: 3}
+      propertyPath: m_LocalScale.y
+      value: 1.5
       objectReference: {fileID: 0}
     - target: {fileID: 8074888198419964844, guid: 88c32354f0c48404f97b5d1ba0817afd,
         type: 3}
       propertyPath: m_LocalScale.z
-      value: 1
+      value: 1.5
       objectReference: {fileID: 0}
     - target: {fileID: 8074888198419964844, guid: 88c32354f0c48404f97b5d1ba0817afd,
         type: 3}
