@@ -5,6 +5,7 @@ using UnityEngine;
 public class Quit : MonoBehaviour
 {
     public GameObject Esc;
+    public GameObject Musicplayer;
     //public GameObject PlayerOne;
     //public GameObject Playertwo;
 
@@ -19,6 +20,7 @@ public class Quit : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Escape))
         {
             Esc.SetActive(true);
+            Musicplayer.SetActive(false);
             //PlayerOne.SetActive(false);
             //Playertwo.SetActive(false);
 

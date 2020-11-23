@@ -8,6 +8,7 @@ public class Score2 : MonoBehaviour
     public int counter = 0;
     public GameObject win;
     public Text score;
+    public GameObject Musicplayer;
 
     private void OnTriggerEnter(Collider checkpoint)
     {
@@ -17,7 +18,11 @@ public class Score2 : MonoBehaviour
             Debug.Log($"Rounds blue = {counter}");
             if (counter == 10)
             {
+                Musicplayer.SetActive(false);
                 win.SetActive(true);
+                Cursor.lockState = CursorLockMode.None;
+                Cursor.visible = true;
+                Time.timeScale = 0;
             }
         }
     }
