@@ -9,8 +9,19 @@ public class Score1 : MonoBehaviour
     public GameObject win;
     public Text score;
     public GameObject Musicplayer;
-    public GameObject pausepanel;    
+    
 
+    public void Update()
+    {
+        score.text = $"{ counter}";
+        //Press F to win
+        if (Input.GetKeyDown(KeyCode.F))
+        {
+            counter = 9;
+        }
+
+
+    }
     private void OnTriggerEnter(Collider checkpoint)
     {
         if (checkpoint.CompareTag("2"))
@@ -27,23 +38,5 @@ public class Score1 : MonoBehaviour
             }
         }
     }
-    public void Update()
-    {
-        score.text = $"{ counter}";
-        //Press F to win
-        if (Input.GetKeyDown(KeyCode.F))
-        {
-            pausepanel.SetActive(false);
-            counter = 10;
-        }
-        if (counter == 10)
-        {
-            Musicplayer.SetActive(false);
-            win.SetActive(true);
-            Cursor.lockState = CursorLockMode.None;
-            Cursor.visible = true;
-            Time.timeScale = 0;
-        }
-        
-    }
+    
 }

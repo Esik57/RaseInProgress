@@ -9,7 +9,7 @@ public class Score2 : MonoBehaviour
     public GameObject win;
     public Text score;
     public GameObject Musicplayer;
-
+    
     private void OnTriggerEnter(Collider checkpoint)
     {
         if (checkpoint.CompareTag("5"))

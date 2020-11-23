@@ -5656,7 +5656,7 @@ Animator:
   m_Controller: {fileID: 9100000, guid: ef572213c0891d74180736387c51909a, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
-  m_ApplyRootMotion: 0
+  m_ApplyRootMotion: 1
   m_LinearVelocityBlending: 0
   m_WarningMessage: 
   m_HasTransformHierarchy: 1
@@ -10632,7 +10632,6 @@ MonoBehaviour:
   win: {fileID: 1835730061}
   score: {fileID: 375571478}
   Musicplayer: {fileID: 331766869}
-  pausepanel: {fileID: 1022763621}
 --- !u!4 &5933437864179330865
 Transform:
   m_ObjectHideFlags: 0
