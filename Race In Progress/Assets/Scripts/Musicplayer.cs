@@ -5,7 +5,7 @@ using UnityEngine;
 public class Musicplayer : MonoBehaviour
 {
     public AudioClip[] clips;
-    private AudioSource audioSource;
+    private AudioSource audioSource;    
 
     // Start is called before the first frame update
     void Start()
@@ -15,16 +15,21 @@ public class Musicplayer : MonoBehaviour
     }
     private AudioClip GetRandomClip() 
     {
-        return clips[Random.Range(0, clips.Length)];
+        return clips[Random.Range(0,6)];
     
     }
     // Update is called once per frame
     void Update()
     {
-        if (!audioSource.isPlaying) 
+        if (!audioSource.isPlaying)
         {
             audioSource.clip = GetRandomClip();
             audioSource.Play();
+        }
+        if (Input.GetKeyDown(KeyCode.M)) 
+        {
+            audioSource.clip = GetRandomClip();
+            
         }
     }
 }

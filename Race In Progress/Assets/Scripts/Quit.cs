@@ -5,14 +5,14 @@ using UnityEngine;
 public class Quit : MonoBehaviour
 {
     public GameObject Esc;
-    public GameObject Musicplayer;
-    //public GameObject PlayerOne;
-    //public GameObject Playertwo;
+    public GameObject Musicplayer;    
+    
 
     void Start()
     {
         Cursor.lockState = CursorLockMode.Locked;
         Cursor.visible = false;
+        
     }
 
     void Update()
@@ -21,9 +21,7 @@ public class Quit : MonoBehaviour
         {
             Esc.SetActive(true);
             Musicplayer.SetActive(false);
-            //PlayerOne.SetActive(false);
-            //Playertwo.SetActive(false);
-
+            
             // Вызов метода остановки времени
             StartCoroutine("pause");
 
@@ -46,4 +44,5 @@ public class Quit : MonoBehaviour
         gameObject.SetActive(false);
         yield return 0;
     }
+    
 }
