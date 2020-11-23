@@ -5,6 +5,7 @@ using UnityEngine;
 public class Сountdown : MonoBehaviour
 {
     private float pauseTime;
+    public GameObject pause;
     void Start()
     {
         StartCoroutine("StartDelay");
@@ -17,6 +18,7 @@ public class Сountdown : MonoBehaviour
         while (Time.realtimeSinceStartup < pauseTime)
             yield return 0;
         Time.timeScale = 1;
+        pause.SetActive(true);
         gameObject.SetActive(false);
     }
 }
